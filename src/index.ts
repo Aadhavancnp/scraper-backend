@@ -40,8 +40,8 @@ app.get('/', async (req, res) => {
 
 app.get('/verify-email/:email', (req, res) => {
   // const { email } = req.body;
-  // console.log(email);
   const email = req.params.email;
+  // console.log(email);
   if (!email) {
     res.status(400).json({ error: 'Email is required' });
     return;

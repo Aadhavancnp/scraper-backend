@@ -92,9 +92,10 @@ app.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, func
         }
     });
 }); });
-app.post('/verify-email', function (req, res) {
-    var email = req.body.email;
-    console.log(email);
+app.get('/verify-email/:email', function (req, res) {
+    // const { email } = req.body;
+    var email = req.params.email;
+    // console.log(email);
     if (!email) {
         res.status(400).json({ error: 'Email is required' });
         return;
